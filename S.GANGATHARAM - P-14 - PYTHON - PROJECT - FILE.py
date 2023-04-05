@@ -1,0 +1,133 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[8]:
+
+
+#PYTHON PROJECT - TASK - 1 - PRINTING THE PRIME NUMBERS
+start_value = int(input())# GETTING STARING VALUES FROM USERS
+end_value = int(input())# GETTING END  VALUES FROM USERS
+
+for num in range(start_value,end_value+1):# BY USING THE FOR LOOP ITERATING THE VALUES BETWEEN STARTING AND ENDING
+  if num > 1:# PRIME NUMBER STARTS FROM 2 ,HENCE BY USING IF CONDITION  CHECKING THE NUMBER IS GREATER THAN 1 
+    c = 0# CREATING A COUNTER CALLED C 
+    for i in range(2,num):#FOR DIVISIBLE VALUES CHECKING, STARTS FROM 2 AND ENDS BEFORE THE NUMBER GET FROM OUTER FOR LOOP
+      if num%i == 0:#DIVIDES THE BOTH NUMBER(NUM AND I (BOTH FOR LOOPS )) AND CHECKS WHEATHER ITS EQUALS TO ZERO
+        c = c+1# IF ITS EQUAL TO ZERO MEANS IT DENOTES THAT  NUMBER HAS MORE THAN TWO FACTOR,THEN THE COUNTER GETS ADDED BY 1
+    if c == 0:# IF THAT C == 0 MEANS THE NUMBER HAS A FACTOR OF LESS THAN 2 ,THEN THE NUMBER IS CALLED AS PRIME NUMBERS
+      print(num)# THE PRIME NUMBERS ARE PRINTED AS OUTPUT 
+
+
+# In[9]:
+
+
+# TASK - 2 - WRITE A PYTHON PROGRAM TO CREATE A EQUATION (a+b+c) * (a-b-c) * ab + a^2 + b ^2 + (abc)^3 
+s1 = input()#GETTING A VARIABLE AS A  INPUT FROM USER FOR CREATING A EQUATION  
+s2 = input() 
+s3 = input()  
+
+#  EQUATION TO CREATE (a+b+c) * (a-b-c) * ab + a^2 + b ^2 + (abc)^3 
+equ = "({0}+{1}+{2})*({0}-{1}-{2})*{0}{1}+{0}^2+{1}^2+({0}{1}{2})^3"# USING FORMAT STRING METHOD ACCORDING TO THE EQATION IT WAS PLACED
+print(equ.format(s1,s2,s3))#PASSING THE VARIABLES AND GETTING THE OUTPUT AS EQUATION
+
+
+# In[15]:
+
+
+# TASK - 3 - urlist = ['wood','knife','axe'] , mylist = ['tree', 'apple', 'mango', 'melon'] – combine two lists
+urlist = ['wood','knife','axe']# LIST-1 
+mylist = ['tree', 'apple', 'mango', 'melon'] # LIST -2 
+
+a = []# CREATING A EMPTY LIST TO COMBINE THE TWO LIST
+for i in urlist:# USING FOR LOOP GETTING ALL THE ITEMS IN urlist 
+  a.append(i)# APPENDING THE ITEMS IN urlist TO THE LIST A 
+
+for i in mylist:# USING FOR LOOP GETTING ALL THE ITEMS IN mylist
+  a.append(i)#APPENDING THE ITEMS IN mylist TO THE LIST A 
+
+
+print(a)# PRINTING A OUTPUT AS COMBINATION OF TWO LISTS
+
+
+# In[10]:
+
+
+# TASK -4 - printing natural number based on user input
+a = int(input())#GETTING INPUT AS INTEGER WHERE AS IT WILL BE A ENDING VALUE OF A NATURAL NUMBER
+
+for i in range(1,a+1):# NATURAL NUMBER STARTS FROM 1, HENCE USING FOR LOOP IN THE RANGE OF FROM 1 TO END VALUE GIVEN BY USER, ALL NUMBERS WILL ITERABLE
+  print(i)# THE NUMBERS WILL GET PRINTED
+
+
+# In[11]:
+
+
+# TASK - 5 - write a program to create a equation sqrt(x1-x2) ^ 2 + sqrt( y1 – y2 ) ^2 
+a = input()# IT CONTAINS OF FOUR VARIABLES, HENCE GET IT BY USER
+b = input()
+c = input()
+d = input()
+
+eqn = "(sqrt({0}-{1})^2)+(sqrt({2}-{3})^2)"# BASED ON THE STRING FORMAT CREATE ACCORDING TO THAT EQUATION 
+print(eqn.format(a,b,c,d))# PASSING THE VALUES AND GET OUTPUT AS EQUATION 
+
+
+# In[12]:
+
+
+# TASK - 6 - program to get “python” word from the string
+
+Name = "Guvi python"# STRING 
+a = Name.split(" ")# STRING HAS BEEN SPLITED BY SPACE 
+
+
+for i in a:# ITERATING EACH VALUES IN A STRING 
+  if i == "python":# BY USING THE IF CONDITION CHECKS WHEATHER WORD == "PYTHON",IF IT EQUALS IT WILL GET ENTERS 
+    print(i)# THE WORD WILL GET PRINTED
+
+
+# In[13]:
+
+
+# TASK - 7- Using class and function - Write a program for palindrome Ex. Madam
+a = input()# GETTING INPUT AS STRING FROM USER
+b = a.lower()#WHATEVER IT MAY BE A CASE WE GOING TO CHECK A CHARACTER SO CONVERTING EVERYTHING INTO A LOWERCASE 
+
+
+
+
+class palin:#CREATING A CLASS 
+  def palindrome(b):# INSIDE A CLASS A FUNCTION IS CREATED TO CHECK THE GIVEN STRING IS PALINDROME OR NOT 
+    if b[ : ] == b[ : :-1]:#IF REGULAR STRINGS AND REVERSE STRINGS BOTH ARE SAME MEANS IT ENTERS INTO THE CONDITIONS
+      print("GIVEN STRING IS PALINDROME")# IF THE CONDITIONS SATISFIES IT WILL PRINT
+    else:#IF THE CONDITIONS NOT SATISFIES IT WILL ENTERS INTO THE ELSE PART
+      print("GIVEN STRING IS NOT A  PALINDROME")# IT WILL PRINTS 
+palin.palindrome(b)# CALLING THE CLASS,FUNCTIONS TO GET OUTPUT
+      
+
+
+# In[14]:
+
+
+# TASK - 8 - using file handling – write a text file in ur system with “hello world”
+
+f = open("sample.txt","x")#USING FILE HANDLING CONCEPTS ,IN X- MODE,IT WILL CREATES THE FILE,IF IT DOESN'T EXISTS
+f.write("hello world")#USING THE WRITE FUNCTION THE CONTENTS WILL WRITES INTO THE FILE
+f.close()# CLOSING THE FILE ,AFTER CLOSE ONLY THE FILE ACTION WILL GET COMPLETED ,AND IT WILL VIEWS
+
+
+# In[ ]:
+
+
+# TASK - 9 - create option button using tkinter GUI in python
+from tkinter import*#IMPORTING THE PACKAGES TKINTER 
+
+window = Tk()#CREATING A WINDOW USING THE IN-BUILT-FUNCTION Tk()
+window.title("option")# GIVING A TITLE FOR THAT WINDOW
+BTN = Button(text = "option",fg = "blue",bg = "white",width = 10,height = 3)# CREATING THE BUTTON USING Button FUNCTION 
+# AND GIVING THE NAME OF BUTTON IN TEXT ,AND ITS NORMAL CONDITIONS ARE DEFINING
+BTN.pack()# AFTER CREATING A BUTTON WE HAVE TO PACK IT THEN ONLY IT WILL DISPALYS
+
+
+window.mainloop()# IT IS A CONNECTIVITY FOR WINDOW WITH THAT MAIN LOOP ,AFTER THIS CONNECTIVITY ONLY THE WINDOW AND BUTTON WILL GET DISPLAYED
+
